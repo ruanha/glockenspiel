@@ -1,11 +1,7 @@
-import Xylophone from "./Xylophone";
+import Glockenspiel from "./Glockenspiel";
 
 function App() {
-  return (
-    <>
-      <Xylophone />
-    </>
-  );
+  return <Glockenspiel />;
 }
 
 export default App;

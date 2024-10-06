@@ -1,6 +1,6 @@
 import Bar from "./Bar";
 
-function Xylophone() {
+function Glockenspiel() {
   const bars = [
     { note: "C3", color: "bg-red-500" },
     { note: "D3", color: "bg-orange-500" },
@@ -14,7 +14,7 @@ function Xylophone() {
     { note: "E4", color: "bg-yellow-200" },
   ];
   return (
-    <div className="flex flex-row gap-8">
+    <div className="flex flex-row gap-1 md:gap-2 lg:gap-4 flex-wrap">
       {bars.map((bar, index) => (
         <Bar key={index} note={bar.note} color={bar.color} />
       ))}
@@ -22,4 +22,4 @@ function Xylophone() {
   );
 }
 
-export default Xylophone;
+export default Glockenspiel;
