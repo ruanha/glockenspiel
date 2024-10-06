@@ -5,7 +5,7 @@ function Bar({ note, color }: { note: string; color: string }) {
   };
   return (
     <div
-      className={`w-14 h-28 flex place-items-center justify-center rounded ${color}`}
+      className={`w-12 h-40 md:w-16 md:h-64 lg:w-20 lg:h-72 flex place-items-center justify-center rounded-lg ${color}`}
       onClick={() => playNote()}
     >
       {note}
@@ -14,3 +14,5 @@ function Bar({ note, color }: { note: string; color: string }) {
 }
 
 export default Bar;
+// 80 / 24 = 3.3333333333333335
+//
