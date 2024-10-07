@@ -2,159 +2,159 @@ export const abc = [
   [
     {
       note: "C3",
-      word: "A",
+      text: "A",
     },
     {
       note: "C3",
-      word: "B",
+      text: "B",
     },
     {
       note: "G3",
-      word: "C",
+      text: "C",
     },
     {
       note: "G3",
-      word: "D",
+      text: "D",
     },
     {
       note: "A3",
-      word: "E",
+      text: "E",
     },
     {
       note: "A3",
-      word: "F",
+      text: "F",
     },
     {
       note: "G3",
-      word: "G",
+      text: "G",
     },
   ],
   [
     {
       note: "F3",
-      word: "H",
+      text: "H",
     },
     {
       note: "F3",
-      word: "I",
+      text: "I",
     },
     {
       note: "E3",
-      word: "J",
+      text: "J",
     },
     {
       note: "E3",
-      word: "K",
+      text: "K",
     },
     {
       note: "D3",
-      word: "L",
+      text: "L",
     },
     {
       note: "D3",
-      word: "M",
+      text: "M",
     },
     {
       note: "C3",
-      word: "N",
+      text: "N",
     },
   ],
   [
     {
       note: "G3",
-      word: "O",
+      text: "O",
     },
     {
       note: "G3",
-      word: "P",
+      text: "P",
     },
     {
       note: "F3",
-      word: "Q",
+      text: "Q",
     },
     {
       note: "F3",
-      word: "R",
+      text: "R",
     },
     {
       note: "E3",
-      word: "S",
+      text: "S",
     },
     {
       note: "E3",
-      word: "T",
+      text: "T",
     },
     {
       note: "D3",
-      word: "U",
+      text: "U",
     },
   ],
   [
     {
       note: "C3",
-      word: "V",
+      text: "V",
     },
     {
       note: "",
-      word: "W",
+      text: "W",
     },
     {
       note: "C3",
-      word: "X",
+      text: "X",
     },
     {
       note: "G3",
-      word: "Y",
+      text: "Y",
     },
     {
       note: "G3",
-      word: "Z",
+      text: "Z",
     },
     {
       note: "A3",
-      word: "Æ",
+      text: "Æ",
     },
     {
       note: "A3",
-      word: "Ø",
+      text: "Ø",
     },
     {
       note: "G3",
-      word: "Å",
+      text: "Å",
     },
   ],
   [
     {
       note: "F3",
-      word: "OT",
+      text: "OT",
     },
     {
       note: "F3",
-      word: "TE",
+      text: "TE",
     },
     {
       note: "",
-      word: "OG",
+      text: "OG",
     },
     {
       note: "E3",
-      word: "TY",
+      text: "TY",
     },
     {
       note: "E3",
-      word: "VE",
+      text: "VE",
     },
     {
       note: "D3",
-      word: "SKAL",
+      text: "SKAL",
     },
     {
       note: "D3",
-      word: "DER",
+      text: "DER",
     },
     {
       note: "C3",
-      word: "STÅ",
+      text: "STÅ",
     },
   ],
 ];

@@ -1,17 +1,17 @@
-import { abc } from "./abc";
+import { abc } from "./songs/abc";
 import Dot from "./Dot";
 
 function Sheet({ notes }: { notes: Record<string, { color: string }> }) {
   const rows = abc.map((row, i) => {
     const cells = row.map((entry, j) => {
       return (
-        <div className="flex flex-col">
+        <div key={j} className="flex flex-col">
           {entry.note ? (
             <Dot key={j} color={notes[entry.note].color} />
           ) : (
             <Dot key={j} color="bg-transparent" />
           )}
-          <div className="text-center">{entry.word}</div>
+          <div className="text-center">{entry.text}</div>
         </div>
       );
     });
