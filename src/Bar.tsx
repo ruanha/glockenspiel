@@ -27,5 +27,3 @@ function Bar({ note, color }: { note: string; color: string }) {
 }
 
 export default Bar;
-// 80 / 24 = 3.3333333333333335
-//
