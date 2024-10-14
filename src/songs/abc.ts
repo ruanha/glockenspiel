@@ -1,4 +1,6 @@
-export const abc = {
+import { Song } from "./song.model";
+
+export const abc: Song = {
   title: "ABC",
   notes: [
     [

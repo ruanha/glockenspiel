@@ -1,8 +1,14 @@
-import { abc } from "./songs/abc";
 import Dot from "./Dot";
+import { Song } from "./songs/song.model";
 
-function Sheet({ notes }: { notes: Record<string, { color: string }> }) {
-  const rows = abc.notes.map((row, i) => {
+function Sheet({
+  notes,
+  selectedSong,
+}: {
+  notes: Record<string, { color: string }>;
+  selectedSong: Song;
+}) {
+  const rows = selectedSong.notes.map((row, i) => {
     const cells = row.map((entry, j) => {
       return (
         <div key={j} className="flex flex-col">
@@ -21,9 +27,10 @@ function Sheet({ notes }: { notes: Record<string, { color: string }> }) {
       </div>
     );
   });
+
   return (
     <>
-      <h2 className="text-5xl text-center mb-6">{abc.title}</h2>
+      <h2 className="text-5xl text-center mb-6">{selectedSong.title}</h2>
       <div className="flex flex-col items-center gap-2">{rows}</div>
     </>
   );
