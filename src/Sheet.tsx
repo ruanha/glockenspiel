@@ -2,7 +2,7 @@ import { abc } from "./songs/abc";
 import Dot from "./Dot";
 
 function Sheet({ notes }: { notes: Record<string, { color: string }> }) {
-  const rows = abc.map((row, i) => {
+  const rows = abc.notes.map((row, i) => {
     const cells = row.map((entry, j) => {
       return (
         <div key={j} className="flex flex-col">
@@ -21,7 +21,12 @@ function Sheet({ notes }: { notes: Record<string, { color: string }> }) {
       </div>
     );
   });
-  return <div className="flex flex-col gap-4">{rows}</div>;
+  return (
+    <>
+      <h2 className="text-5xl text-center mb-6">{abc.title}</h2>
+      <div className="flex flex-col items-center gap-2">{rows}</div>
+    </>
+  );
 }
 
 export default Sheet;
