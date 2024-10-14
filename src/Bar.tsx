@@ -1,6 +1,9 @@
 function Bar({ note, color }: { note: string; color: string }) {
   const audio = new Audio(`/${note}.wav`);
   const playNote = () => {
+    if (audio.duration > 0) {
+      audio.currentTime = 0;
+    }
     audio.play();
   };
   return (
