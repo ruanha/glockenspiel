@@ -1,6 +1,6 @@
 function Bar({ note, color }: { note: string; color: string }) {
+  const audio = new Audio(`/${note}.wav`);
   const playNote = () => {
-    const audio = new Audio(`/${note}.wav`);
     audio.play();
   };
   return (
