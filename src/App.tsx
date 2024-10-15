@@ -28,11 +28,12 @@ function App() {
     </option>
   ));
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col space-y-8">
       <select
         name="songs"
         id="songs"
         onChange={(event) => setSelectedSong(songs[event.target.value])}
+        className="p-2 m-2 bg-gray-200 rounded-md text-lg text-gray-800 font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
       >
         {options}
       </select>

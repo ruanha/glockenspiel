@@ -10,7 +10,7 @@ function Bar({ note, color }: { note: string; color: string }) {
     <div
       className={`
         w-12
-        h-40
+        h-32
         md:w-16 
         md:h-64
         lg:w-20
@@ -21,6 +21,7 @@ function Bar({ note, color }: { note: string; color: string }) {
         rounded-lg 
         ${color}
         select-none
+        shadow-md
         `}
       onClick={() => playNote()}
     >
