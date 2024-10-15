@@ -7,8 +7,12 @@ import Sheet from "./Sheet";
 
 function App() {
   const [selectedSong, setSelectedSong] = useState<Song>(abc);
-  const [showNotes, setShowNotes] = useState(true);
-  const [showText, setShowText] = useState(true);
+  const [showNotes, setShowNotes] = useState(
+    JSON.parse(localStorage.getItem("showNotes") || "true") as boolean
+  );
+  const [showText, setShowText] = useState(
+    JSON.parse(localStorage.getItem("showText") || "true") as boolean
+  );
   const notes = {
     C3: { color: "bg-indigo-800" },
     D3: { color: "bg-fuchsia-800" },
@@ -30,6 +34,17 @@ function App() {
       {songs[song].title}
     </option>
   ));
+
+  const handleShowNotes = (value: boolean) => {
+    setShowNotes(value);
+    localStorage.setItem("showNotes", value.toString());
+  };
+
+  const handleShowText = (value: boolean) => {
+    setShowText(value);
+    localStorage.setItem("showText", value.toString());
+  };
+
   return (
     <div className="flex flex-col space-y-8">
       <div className="flex items-center space-x-6">
@@ -46,8 +61,8 @@ function App() {
           <Flex gap="2">
             {" "}
             <Switch
-              defaultChecked
-              onCheckedChange={() => setShowNotes(!showNotes)}
+              checked={showNotes}
+              onCheckedChange={(isChecked) => handleShowNotes(isChecked)}
             />
             Show Notes
           </Flex>
@@ -57,8 +72,8 @@ function App() {
           <Flex gap="2">
             {" "}
             <Switch
-              defaultChecked
-              onCheckedChange={() => setShowText(!showText)}
+              checked={showText}
+              onCheckedChange={(isChecked) => handleShowText(isChecked)}
             />
             Show Text
           </Flex>
