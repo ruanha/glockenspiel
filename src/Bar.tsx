@@ -1,4 +1,12 @@
-function Bar({ note, color }: { note: string; color: string }) {
+function Bar({
+  note,
+  color,
+  showNote,
+}: {
+  note: string;
+  color: string;
+  showNote: boolean;
+}) {
   const audio = new Audio(`/${note}.wav`);
   const playNote = () => {
     if (audio.duration > 0) {
@@ -25,7 +33,7 @@ function Bar({ note, color }: { note: string; color: string }) {
         `}
       onClick={() => playNote()}
     >
-      {note}
+      {showNote && note}
     </div>
   );
 }

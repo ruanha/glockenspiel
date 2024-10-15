@@ -4,9 +4,11 @@ import { Song } from "./songs/song.model";
 function Sheet({
   notes,
   selectedSong,
+  showText,
 }: {
   notes: Record<string, { color: string }>;
   selectedSong: Song;
+  showText: boolean;
 }) {
   const rows = selectedSong.notes.map((row, i) => {
     const cells = row.map((entry, j) => {
@@ -17,7 +19,7 @@ function Sheet({
           ) : (
             <Dot key={j} color="bg-transparent" />
           )}
-          <div className="text-center">{entry.text}</div>
+          <div className="text-center">{showText && entry.text}</div>
         </div>
       );
     });
