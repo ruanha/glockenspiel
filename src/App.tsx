@@ -14,16 +14,16 @@ function App() {
     JSON.parse(localStorage.getItem("showText") || "true") as boolean
   );
   const notes = {
-    C3: { color: "bg-indigo-800" },
-    D3: { color: "bg-fuchsia-800" },
-    E3: { color: "bg-yellow-300" },
-    F3: { color: "bg-red-600" },
-    G3: { color: "bg-gray-900" },
-    A3: { color: "bg-gray-300" },
-    B3: { color: "bg-green-800" },
-    C4: { color: "bg-blue-200" },
-    D4: { color: "bg-pink-300" },
-    E4: { color: "bg-amber-600" },
+    C3: { color: "bg-indigo-800", height: 9.4 },
+    D3: { color: "bg-fuchsia-800", height: 9 },
+    E3: { color: "bg-yellow-300", height: 8.6 },
+    F3: { color: "bg-red-600", height: 8.4 },
+    G3: { color: "bg-gray-900", height: 8 },
+    A3: { color: "bg-gray-300", height: 7.6 },
+    B3: { color: "bg-green-800", height: 7.2 },
+    C4: { color: "bg-blue-200", height: 7 },
+    D4: { color: "bg-pink-300", height: 6.6 },
+    E4: { color: "bg-amber-600", height: 6.2 },
   };
   const songs: Record<string, Song> = {
     abc,
