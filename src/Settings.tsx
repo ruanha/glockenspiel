@@ -1,4 +1,4 @@
-import { Switch, Text, Flex } from "@radix-ui/themes";
+import { Switch, Text, Flex, Select } from "@radix-ui/themes";
 import { abc, wheelsOnTheBus } from "./songs/index";
 import { Song } from "./songs/song.model";
 
@@ -8,6 +8,7 @@ interface SettingsProps {
   setShowNotes: (value: boolean) => void;
   showText: boolean;
   setShowText: (value: boolean) => void;
+  setSize: (value: number) => void;
 }
 
 function Settings({
@@ -16,6 +17,7 @@ function Settings({
   setShowNotes,
   showText,
   setShowText,
+  setSize,
 }: SettingsProps) {
   const songs: Record<string, Song> = {
     abc,
@@ -37,6 +39,10 @@ function Settings({
     localStorage.setItem("showText", value.toString());
   };
 
+  const handleSize = (value: string) => {
+    setSize(parseFloat(value));
+  };
+
   return (
     <div className="flex items-center space-x-6">
       <select
@@ -47,10 +53,8 @@ function Settings({
       >
         {options}
       </select>
-
       <Text as="label" size="4">
         <Flex gap="2">
-          {" "}
           <Switch
             checked={showNotes}
             onCheckedChange={(isChecked) => handleShowNotes(isChecked)}
@@ -58,10 +62,8 @@ function Settings({
           Show Notes
         </Flex>
       </Text>
-
       <Text as="label" size="4">
         <Flex gap="2">
-          {" "}
           <Switch
             checked={showText}
             onCheckedChange={(isChecked) => handleShowText(isChecked)}
@@ -69,6 +71,16 @@ function Settings({
           Show Text
         </Flex>
       </Text>
+      <Select.Root defaultValue="1" onValueChange={handleSize}>
+        <Select.Trigger />
+        <Select.Content>
+          <Select.Group>
+            <Select.Item value="1">sm</Select.Item>
+            <Select.Item value="1.5">md</Select.Item>
+            <Select.Item value="2">lg</Select.Item>
+          </Select.Group>
+        </Select.Content>
+      </Select.Root>
     </div>
   );
 }

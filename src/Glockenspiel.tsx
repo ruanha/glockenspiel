@@ -3,9 +3,11 @@ import Bar from "./Bar";
 function Glockenspiel({
   notes,
   showNotes,
+  size,
 }: {
   notes: Record<string, { color: string; height: number }>;
   showNotes: boolean;
+  size: number;
 }) {
   const keys = Object.keys(notes);
 
@@ -19,7 +21,8 @@ function Glockenspiel({
           key={index}
           note={key}
           color={notes[key].color}
-          height={notes[key].height}
+          height={notes[key].height * size}
+          width={2 * size}
           showNote={showNotes}
         />
       ))}

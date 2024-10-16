@@ -13,6 +13,8 @@ function App() {
   const [showText, setShowText] = useState(
     JSON.parse(localStorage.getItem("showText") || "true") as boolean
   );
+  const [size, setSize] = useState(1);
+
   const notes = {
     C3: { color: "bg-indigo-800", height: 9.4 },
     D3: { color: "bg-fuchsia-800", height: 9 },
@@ -38,16 +40,17 @@ function App() {
   };
 
   return (
-    <div className="flex flex-col space-y-8">
+    <div className="flex flex-col items-center space-y-8">
       <Settings
         setSelectedSong={setSelectedSong}
         showNotes={showNotes}
         setShowNotes={handleShowNotes}
         showText={showText}
         setShowText={handleShowText}
+        setSize={setSize}
       />
       <Sheet notes={notes} selectedSong={selectedSong} showText={showText} />
-      <Glockenspiel notes={notes} showNotes={showNotes} />
+      <Glockenspiel notes={notes} showNotes={showNotes} size={size} />
     </div>
   );
 }

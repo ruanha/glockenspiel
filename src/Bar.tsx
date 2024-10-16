@@ -3,11 +3,13 @@ function Bar({
   color,
   showNote,
   height,
+  width,
 }: {
   note: string;
   color: string;
   showNote: boolean;
   height: number;
+  width: number;
 }) {
   const audio = new Audio(`/${note}.wav`);
   const playNote = () => {
@@ -18,7 +20,7 @@ function Bar({
   };
   return (
     <div
-      style={{ height: `${height}rem`, width: "2rem" }}
+      style={{ height: `${height}rem`, width: `${width}rem` }}
       className={`
         flex
         place-items-center
