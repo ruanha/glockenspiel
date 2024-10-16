@@ -24,6 +24,7 @@ function App() {
     C4: { color: "bg-blue-200", height: 7 },
     D4: { color: "bg-pink-300", height: 6.6 },
     E4: { color: "bg-amber-600", height: 6.2 },
+    F4: { color: "bg-lime-600", height: 6 },
   };
   const songs: Record<string, Song> = {
     abc,
