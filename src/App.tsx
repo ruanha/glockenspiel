@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { GearIcon } from "@radix-ui/react-icons";
+import { IconButton } from "@radix-ui/themes";
 import { abc } from "./songs/index";
 import { Song } from "./songs/song.model";
 import Settings from "./Settings";
@@ -14,6 +16,7 @@ function App() {
     JSON.parse(localStorage.getItem("showText") || "true") as boolean
   );
   const [size, setSize] = useState(1);
+  const [showSettings, setShowSettings] = useState(false);
 
   const notes = {
     C3: { color: "bg-indigo-800", height: 9.4 },
@@ -39,15 +42,22 @@ function App() {
   };
 
   return (
-    <div className="flex flex-col items-center space-y-8">
-      <Settings
-        setSelectedSong={setSelectedSong}
-        showNotes={showNotes}
-        setShowNotes={handleShowNotes}
-        showText={showText}
-        setShowText={handleShowText}
-        setSize={setSize}
-      />
+    <div className="flex flex-col items-center items-stretch space-y-8 m-8">
+      <div className="flex justify-start gap-4">
+        <IconButton onClick={() => setShowSettings(!showSettings)}>
+          <GearIcon width="18" height="18" />
+        </IconButton>
+        {showSettings && (
+          <Settings
+            setSelectedSong={setSelectedSong}
+            showNotes={showNotes}
+            setShowNotes={handleShowNotes}
+            showText={showText}
+            setShowText={handleShowText}
+            setSize={setSize}
+          />
+        )}
+      </div>
       <Sheet notes={notes} selectedSong={selectedSong} showText={showText} />
       <Glockenspiel notes={notes} showNotes={showNotes} size={size} />
     </div>
